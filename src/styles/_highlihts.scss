@@ -1,0 +1,179 @@
+@import "./mixins";
+
+.highlights {
+    width: 100%;
+    padding-bottom: 48px;
+    margin-bottom: 24px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 24px;
+    row-gap: 16px;
+    
+    &__notice {
+        grid-column: span 4;
+        font-weight: 400;
+        text-align: center;
+        letter-spacing: 5px;
+        color: #888;
+    }
+
+    &__card {
+        position: relative;
+        padding: 8px;
+    
+        &.partner {
+            background-color: $dark;
+            color: #FFF;
+            border-top-right-radius: 16px;
+    
+            $this: '.highlights__card';
+    
+            #{$this} {
+                &-icon {
+                    &-wrapper {
+                        border-color: #FFF;
+
+                        svg {
+                            fill: #FFF;
+                        }
+                    }
+                }
+
+                &-title {
+                    color: gold;
+                }
+
+                &-date {
+                    &::after {
+                        content: 'Partner';
+                        position: absolute;
+                        bottom: 0;
+                        left: 100%;
+                        display: inline-block;
+                        padding: 4px 8px;
+                        font-size: 12px;
+                        font-weight: 500;
+                        text-transform: uppercase;
+                        color: $dark;
+                        background-color: gold;
+                        border-radius: 4px 4px 0 0;
+                    }
+                }
+    
+                &-description {
+                    color: #FFF;
+                }
+            }
+        }
+
+        &-icon {
+            position: absolute;
+            right: 8px;
+            font-size: 20px;
+
+            &-wrapper {
+                display: grid;
+                padding: 6px;
+
+                &.border {
+                    border: 1px solid #000;
+                    border-radius: 32px;
+                }
+
+                svg {
+                    display: block;
+                }
+            }
+        }
+    
+        &-title {
+            margin-bottom: 4px;
+            margin-right: 32px;
+            display: flex;
+            align-items: flex-end;
+            font-size: 20px;
+            min-height: 48px;
+        }
+    
+        &-date {
+            position: relative;
+            display: inline-block;
+            padding: 4px 4px;
+            font-size: 12px;
+            color: $dark;
+            background-color: #FFF;
+            border-radius: 4px 4px 0 0;
+        }
+    
+        &-img {
+            margin-bottom: 12px;
+            display: block;
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+
+            &-wrapper {
+                position: relative;
+            }
+
+            &-btn {
+                display: block;
+                bottom: 4px;
+                right: 4px;
+                padding: 6px;
+                position: absolute;
+                outline: none;
+                border: none;
+                border-top-left-radius: 4px;
+                background-color: gold;
+
+                svg {
+                    margin-right: 4px;
+                }
+
+                &:hover {
+                    cursor: pointer;
+                    filter: brightness(1.1);
+                }
+            }
+        }
+    
+        &-description {
+            font-size: 14px;
+            line-height: 1.5;
+            color: $dark;
+        }
+
+        &-extras {
+            margin-top: 12px;
+            padding: 12px 0px;
+            border-top: 1px solid $dark;
+
+            &-news {
+                &-title {
+                    margin-bottom: 8px;
+                    font-size: 14px;
+                    letter-spacing: 2px;;
+                    color: $dark;
+                }
+
+                &-card {
+                    padding: 8px 12px;
+                    border-radius: 8px;
+                    @include box-shadow;
+
+                    &-title {
+                        font-size: 12px;
+                    }
+                    &-date {
+                        display: inline-block;
+                        margin-top: 8px;
+                        padding-top: 4px;
+                        border-top: 1px solid gold;
+                        font-size: 10px;
+                    }
+                }
+            }
+        }
+    }
+}

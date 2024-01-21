@@ -1,0 +1,55 @@
+@import "./variables";
+@import "./highlihts";
+
+html, body, * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+html, body {
+    height: 100%;
+}
+
+section {
+    flex: 1 0 auto;
+}
+
+#app {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    font-family: 'Montserrat', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.hero {
+    padding: 64px 48px;
+    margin-bottom: 36px;
+
+    background-size: cover;
+    background-position: 30% center;
+
+    &.space {
+        background-image: url('https://images.pexels.com/photos/2150/sky-space-dark-galaxy.jpg');
+    }
+    &.ocean {
+        background-image: url('https://images.pexels.com/photos/2922672/pexels-photo-2922672.jpeg');
+    }
+    &.wildlife {
+        background-image: url('https://images.pexels.com/photos/247376/pexels-photo-247376.jpeg');
+    }
+    &.dinosaurs {
+        background-image: url('https://img.freepik.com/free-photo/closeup-shot-dinosaur-skull-teeth-glass-box_181624-7239.jpg?w=1920&t=st=1705841903~exp=1705842503~hmac=9942df51769f49781dd11d4daef07689f8adeb061a942b3d9915b733a0926709');    
+        background-position: top 28% center;
+    }
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 48px;
+}
+
