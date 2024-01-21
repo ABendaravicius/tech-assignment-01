@@ -37,12 +37,22 @@
 
     .container {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr;
+
+        > a {
+            width: 100%;
+        }
+
+        @media screen and (min-width: 768px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
     }
 
     &__title {
         display: flex;
+        width: 100%;
         align-items: center;
+        justify-content: center;
         color: #FFF;
 
         &-icon {
@@ -59,16 +69,24 @@
 
         &-text {
             font-size: 20px;
-            max-width: 180px;
+        }
+
+        @media screen and (min-width: 768px) {
+            &-text {
+                max-width: 180px;
+            }
         }
     }
 
     &__nav {
+        margin-bottom: 48px;
+        order: -1;
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
 
         &-wrapper {
             display: grid;
+            order: 0;
         }
 
         &-link {
@@ -86,6 +104,11 @@
             &.router-link-active {
                 color: gold;
             }
+        }
+
+        @media screen and (min-width: 768px) {
+            margin-bottom: 0;
+            grid-template-columns: repeat(3, 1fr);
         }
     }
 }

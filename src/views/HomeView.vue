@@ -65,7 +65,7 @@ export default {
     display: grid;
     max-width: 980px;
     margin: auto;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
     gap: 16px;
 
         &-link {
@@ -102,6 +102,10 @@ export default {
                     object-position: left top;
                 }
             }
+        }
+
+        @media screen and (min-width: 768px){
+            grid-template-columns: repeat(2, 1fr);
         }
     }
 }
